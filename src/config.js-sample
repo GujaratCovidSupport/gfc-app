@@ -1,0 +1,5 @@
+export default {
+  apiKey: "some-key",
+  spreadsheetId: "some-id",
+  discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"]
+};
