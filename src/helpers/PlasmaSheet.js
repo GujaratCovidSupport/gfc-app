@@ -16,10 +16,10 @@ export function load(callback) {
               id: rem[0],
               city: rem[1],
               platform: rem[2],
-              person: rem[4],
-              contact: rem[5],
-              remarks: rem[6],
-              verified_on: rem[8]
+              person: rem[3],
+              contact: rem[4],
+              remarks: rem[5],
+              verified_on: rem[7]
             })) || [];            
 
           callback({

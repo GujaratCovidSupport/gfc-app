@@ -32,7 +32,7 @@ const columns = [
   {
     property: "remarks",
     header: <Text>Remarks</Text>,
-    size: "small",
+    //size: "small",
   },
   {
     property: "verified_on",
@@ -97,19 +97,15 @@ class RemiList extends React.Component {
           patient is admitted.
         </Text>
         <br />
-        <Text>
-          NOTE 2 - For Ahmedabad, Remdesivir is directly delivered by the
-          Government of Gujarat.
-        </Text>
-        <Text>
-          --- For Patients at home: Email SVP hospital with details and scanned
-          prescription from pulmonologist at svpimsr@gmail.com. If consulting
-          physician is prescribing then email from doctor's id is mandatory.
-        </Text>
-        <Text>
-          --- For Patients in private hospital: The hospital authority need to send
-          request to VS hospital and Civil for procurement of injection.
-        </Text>
+        <Text> NOTE 2 - For Ahmedabad : Checklist for getting Remdesivir from SVP Hospital in Ahmedabad.</Text>
+        <Text>1). Patient should be admitted on oxygen bed in Hospital with in AMC limit. ✅</Text>
+        <Text>2). DOC1-Hospital should have Valid C Form issued from AMC ✅</Text>
+        <Text>3). DOC2-RTPCR report of Patient should be recent, not older than 15 days. ✅</Text>
+        <Text>4). DOC3-Doctors should fill the format given on last page ✅</Text>
+        <Text>5). DOC4-Hospital staff icard who will come for collection ✅</Text>
+        <br />
+        <Text>Send 📧 email to remdesivir.tossilamc@gmail.com with above mentioned 4 documents from hospital ID.</Text>
+        <Text>If any documents are missing, application can be rejected. Successful application will get appointment for collecting.</Text>
         <br />
         <DataTable
           border={true}

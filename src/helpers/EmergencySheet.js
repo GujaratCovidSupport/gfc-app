@@ -20,7 +20,7 @@ export function load(callback) {
               service: rem[4],
               status: rem[5],
               remarks: rem[6],
-              verified_by: rem[8]
+              verified_on: rem[8]
             })) || [];            
 
           callback({
