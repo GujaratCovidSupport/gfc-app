@@ -107,6 +107,7 @@ class EmergencyList extends React.Component {
         sortable={true}
         columns={columns}
         data={remi}
+        pin="header"
       />
     );
   }
