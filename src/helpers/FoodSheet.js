@@ -1,4 +1,5 @@
 import config from "../config";
+import moment from "moment";
 
 export function load(callback) {
   window.gapi.client.load("sheets", "v4", () => {
@@ -23,7 +24,7 @@ export function load(callback) {
               contact: rem[7],
               foodfor: rem[8],
               conditions: rem[9],
-              verified_on: rem[11]
+              verified_on: moment(rem[11], "DD-MM-YYYY HH:mm:ss").fromNow(),
             })) || [];            
 
           callback({
