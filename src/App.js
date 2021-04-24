@@ -22,6 +22,7 @@ import RTPCRList from "./components/RTPCRList";
 import AmbList from "./components/AmbuList";
 import CCCList from "./components/CCCList";
 import SurgicalList from "./components/SurgicalList";
+import NursingList from "./components/NursingList";
 //import TociliList from "./components/TociliList";
 
 const gfc_theme = {
@@ -89,6 +90,11 @@ function App() {
                 <Tab title="Doctor On Call">
                   <Box pad="medium">
                     <DoctorList />
+                  </Box>
+                </Tab>
+                <Tab title="Nursing Staff">
+                  <Box pad="medium">
+                    <NursingList />
                   </Box>
                 </Tab>
                 <Tab title="Emergency Number">
