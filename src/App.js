@@ -21,6 +21,7 @@ import PlasmaList from "./components/PlasmaList";
 import RTPCRList from "./components/RTPCRList";
 import AmbList from "./components/AmbuList";
 import CCCList from "./components/CCCList";
+import SurgicalList from "./components/SurgicalList";
 //import TociliList from "./components/TociliList";
 
 const gfc_theme = {
@@ -73,6 +74,11 @@ function App() {
                 <Tab title="Oxygen">
                   <Box pad="medium">
                     <OxygenList />
+                  </Box>
+                </Tab>
+                <Tab title="Surgical Equipments">
+                  <Box pad="medium">
+                    <SurgicalList />
                   </Box>
                 </Tab>
                 <Tab title="Covid Care Center">
