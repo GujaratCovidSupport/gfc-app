@@ -6,7 +6,7 @@ export function load(callback) {
     window.gapi.client.sheets.spreadsheets.values
       .get({
         spreadsheetId: config.spreadsheetId,
-        range: "RT-PCR!A3:J",
+        range: "COVID19 Reports!A3:N",
       })
       .then(
         (response) => {
@@ -23,6 +23,10 @@ export function load(callback) {
               status: rem[6],
               remarks: rem[7],
               verified_on: moment(rem[9], "DD-MM-YYYY HH:mm:ss").fromNow(),
+              home: rem[10],
+              rtpcr: rem[11],
+              ctscan: rem[12],
+              rapid: rem[13],
             })) || [];            
 
           callback({

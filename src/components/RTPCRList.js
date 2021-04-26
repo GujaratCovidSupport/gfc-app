@@ -17,7 +17,7 @@ const columns = [
   {
     property: "org",
     header: <Text>Organization</Text>,
-    size: "small",
+    //size: "small",
   },
   {
     property: "person",
@@ -35,6 +35,26 @@ const columns = [
     //size: "small",
   },
   {
+    property: "home",
+    header: <Text>Home Collection</Text>,
+    //size: "small",
+  },
+  {
+    property: "rtpcr",
+    header: <Text>RT-PCR</Text>,
+    //size: "small",
+  },
+  {
+    property: "ctscan",
+    header: <Text>CT Scan</Text>,
+    //size: "small",
+  },
+  {
+    property: "rapid",
+    header: <Text>Rapid Antigen</Text>,
+    //size: "small",
+  },
+  {
     property: "status",
     header: <Text>Status</Text>,
     //size: "small",
@@ -42,7 +62,7 @@ const columns = [
   {
     property: "remarks",
     header: <Text>Remarks</Text>,
-    size: "small",
+    //size: "small",
   },
   {
     property: "verified_on",
@@ -64,6 +84,10 @@ class RTPCRList extends React.Component {
         status: "fetching...",
         remarks: "fetching...",
         verified_on: "fetching...",
+        home: "fetching...",
+        rtpcr: "fetching...",
+        ctscan: "fetching...",
+        rapid: "fetching...",
       },
     ],
     error: null,

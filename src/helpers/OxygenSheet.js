@@ -6,7 +6,7 @@ export function load(callback) {
     window.gapi.client.sheets.spreadsheets.values
       .get({
         spreadsheetId: config.spreadsheetId,
-        range: "Oxygen-and-Bed!A3:K",
+        range: "Oxygen Sources!A3:K",
       })
       .then(
         (response) => {

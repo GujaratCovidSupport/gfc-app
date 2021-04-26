@@ -62,7 +62,7 @@ function App() {
                     <PlasmaList />
                   </Box>
                 </Tab>
-                <Tab title="RT-PCR">
+                <Tab title="COVID19 Reports">
                   <Box pad="medium">
                     <RTPCRList />
                   </Box>
@@ -72,7 +72,7 @@ function App() {
                     <AmbList />
                   </Box>
                 </Tab>
-                <Tab title="Oxygen">
+                <Tab title="Oxygen Sources">
                   <Box pad="medium">
                     <OxygenList />
                   </Box>
