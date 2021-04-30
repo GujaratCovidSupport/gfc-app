@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html {
+        background: url(https://i.ibb.co/pQx4mzP/mulyadi-Je-CNRx-GLSp4-unsplash-1.jpg)
+          no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        height: 100%;
+      }
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: #fff;
+        padding: 30px;
+        height: 100%;
+      }
+
+      .heading {
+        font-size: 75px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .heading .highlight-color {
+        color: #ffb151;
+      }
+      .donate-links-container {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 85px;
+        padding: 0 80px;
+      }
+      .donate-links {
+        margin: 0 auto;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 25px;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      .donate-links:hover {
+        opacity: 0.9;
+      }
+      @media only screen and (max-width: 600px) {
+        .heading {
+          font-size: 32px;
+        }
+        .donate-links-container {
+          margin-bottom: 70px;
+          padding: 0;
+          flex-direction: column;
+        }
+        .donate-links {
+          font-size: 20px;
+          padding: 8px 16px;
+          margin-bottom: 20px;
+        }
+        .line-break {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-container">
+      <h1 class="heading">
+        <span class="highlight-color">Give a helping hand for </span>
+        <br class="line-break" />
+        Ahmedabad Covid Support
+      </h1>
+      <div class="donate-links-container">
+        <a
+          href="https://pages.razorpay.com/pl_H3PTWbWsPlMHwz/view"
+          target="_blank"
+          class="donate-links"
+        >
+          Indian Nationality
+        </a>
+
+        <a
+          href="https://milaap.org/fundraisers/support-ahmedabad-covid-support"
+          target="_blank"
+          class="donate-links"
+        >
+          Other Nationality
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
