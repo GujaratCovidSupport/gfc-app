@@ -9,6 +9,8 @@ import {
   Text,
   Anchor,
   Footer,
+  Nav,
+  Menu,
 } from "grommet";
 import RemiList from "./components/RemiList";
 import MedicalList from "./components/MedicalList";
@@ -31,6 +33,16 @@ const gfc_theme = {
       family: "Roboto",
     },
   },
+  menu: {
+    background: "brand",
+  },
+  anchor: {
+    color: {
+      dark: "white",
+      light: "white",  
+    },
+    weight: "normal",
+  },
 };
 
 function App() {
@@ -39,17 +51,77 @@ function App() {
       <ResponsiveContext.Consumer>
         {() => (
           <Box>
-            <Header background="brand" direction="row-responsive">
-              <Text size="xlarge" margin="small">
-                #GujaratCovidSupport
-              </Text>
-              <Anchor
-                margin="small"
-                weight="normal"
-                href="https://forms.gle/YXv43foVgYFHsD17A"
-                label="Have a feedback or want to volunteer?"
-              />
-            </Header>
+            <ResponsiveContext.Consumer>
+              {(responsive) =>
+                responsive === "small" ? (
+                  <Header background="brand" pad="medium" direction="column">
+                    <Box direction="row" align="center" gap="small">
+                      <Anchor
+                        size="large"
+                        weight="normal"
+                        href="https://www.gujaratcovidsupport.org"
+                      >
+                        #GujaratCovidSupport
+                      </Anchor>
+                    </Box>
+                    <Nav direction="column" align="center">
+                    <Menu
+                        label="Donate Plasma"
+                        items={[
+                          { label: "English", onClick: () => { window.location.href='https://forms.gle/pdgsP6avND8W2xER8' } },
+                          { label: "ગુજરાતી", onClick: () => { window.location.href='https://forms.gle/hxcsJD3opaCks47e7' } },
+                        ]}
+                      />
+                      <Anchor
+                        alignSelf="center"
+                        weight="normal"
+                        href="https://www.gujaratcovidsupport.org/donate/"
+                        label="Donate Funds"
+                      />
+                      <Anchor
+                        alignSelf="center"
+                        weight="normal"
+                        href="https://forms.gle/YXv43foVgYFHsD17A"
+                        label="Volunteer"
+                      />
+                    </Nav>
+                  </Header>
+                ) : (
+                  <Header background="brand" pad="small">
+                    <Box direction="row" align="center" gap="small">
+                      <Anchor
+                        size="large"
+                        weight="normal"
+                        href="https://www.gujaratcovidsupport.org"
+                      >
+                        #GujaratCovidSupport
+                      </Anchor>
+                    </Box>
+                    <Nav direction="row">
+                      <Menu
+                        label="Donate Plasma"
+                        items={[
+                          { label: "English", onClick: () => { window.location.href='https://forms.gle/pdgsP6avND8W2xER8' } },
+                          { label: "ગુજરાતી", onClick: () => { window.location.href='https://forms.gle/hxcsJD3opaCks47e7' } },
+                        ]}
+                      />
+                      <Anchor
+                        alignSelf="center"
+                        weight="normal"
+                        href="https://www.gujaratcovidsupport.org/donate/"
+                        label="Donate Funds"
+                      />
+                      <Anchor
+                        alignSelf="center"
+                        weight="normal"
+                        href="https://forms.gle/YXv43foVgYFHsD17A"
+                        label="Volunteer"
+                      />
+                    </Nav>
+                  </Header>
+                )
+              }
+            </ResponsiveContext.Consumer>
             <Box direction="row" pad="medium">
               <Tabs>
                 <Tab title="Remedesivir">
