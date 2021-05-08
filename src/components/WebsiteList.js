@@ -1,5 +1,7 @@
 import React from "react";
 import { Anchor, Text } from "grommet";
+import { load } from "../helpers/WebsiteSheet";
+import { ExcelData } from "./excelData";
 
 const columns = [
   {

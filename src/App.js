@@ -1,5 +1,17 @@
 import React from "react";
-import { Anchor, Box, Footer, Grommet, Header, Menu, Nav, ResponsiveContext, Tab, Tabs, Text } from "grommet";
+import {
+  Anchor,
+  Box,
+  Footer,
+  Grommet,
+  Header,
+  Menu,
+  Nav,
+  ResponsiveContext,
+  Tab,
+  Tabs,
+  Text,
+} from "grommet";
 import RemiList from "./components/RemiList";
 import MedicalList from "./components/MedicalList";
 import DoctorList from "./components/DoctorList";
