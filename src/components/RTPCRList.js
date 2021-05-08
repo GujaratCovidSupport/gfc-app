@@ -1,7 +1,6 @@
 import React from "react";
-import { load } from "../helpers/RTPCRSheet";
 import { Text } from "grommet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
@@ -71,26 +70,9 @@ const columns = [
   },
 ];
 
-const RTPCRList = () => {
-  const remi = [
-    {
-      id: "fetching...",
-      city: "fetching...",
-      org: "fetching...",
-      person: "fetching...",
-      contact: "fetching...",
-      time: "fetching...",
-      status: "fetching...",
-      remarks: "fetching...",
-      verified_on: "fetching...",
-      home: "fetching...",
-      rtpcr: "fetching...",
-      ctscan: "fetching...",
-      rapid: "fetching.",
-    },
-  ];
-
-  return <ExcelData initialData={remi} columns={columns} load={load} />;
+const RTPCRList = (props) => {
+  const { data } = props;
+  return <ExcelData data={data} columns={columns} />;
 };
 
 export default RTPCRList;

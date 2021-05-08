@@ -1,7 +1,7 @@
 import React from "react";
 import { load } from "../helpers/TociliSheet";
 import { Text } from "grommet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
