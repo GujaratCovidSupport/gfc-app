@@ -24,14 +24,16 @@ export function load(callback) {
               status: rem[7],
               remarks: rem[8],
               verified_on: moment(rem[10], "DD-MM-YYYY HH:mm:ss").fromNow(),
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Oxygen Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Oxygen Data."
+          );
         }
       );
   });

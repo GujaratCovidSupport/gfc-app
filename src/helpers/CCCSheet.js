@@ -23,14 +23,16 @@ export function load(callback) {
               remarks: rem[6],
               status: rem[7],
               verified_on: moment(rem[9], "DD-MM-YYYY HH:mm:ss").fromNow(),
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Covid Care Center Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Covid Care Center Data."
+          );
         }
       );
   });

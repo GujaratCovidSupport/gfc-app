@@ -1,7 +1,7 @@
 import React from "react";
-import config from "../config";
 import { load } from "../helpers/SurgicalSheet";
-import { DataTable, Text } from "grommet";
+import { Text } from "grommet";
+import { ExcelData } from "./excelData";
 
 const columns = [
   {
@@ -56,73 +56,23 @@ const columns = [
   },
 ];
 
-class SurgicalList extends React.Component {
-  state = {
-    remi: [
-      {
-        id: "fetching...",
-        city: "fetching...",
-        org: "fetching...",
-        name: "fetching...",
-        contact: "fetching...",
-        type: "fetching...",
-        timing: "fetching...",
-        status: "fetching...",
-        remarks: "fetching...",
-        verified_on: "fetching...",
-      },
-    ],
-    error: null,
-  };
+const SurgicalList = () => {
+  const remi = [
+    {
+      id: "fetching...",
+      city: "fetching...",
+      org: "fetching...",
+      name: "fetching...",
+      contact: "fetching...",
+      type: "fetching...",
+      timing: "fetching...",
+      status: "fetching...",
+      remarks: "fetching...",
+      verified_on: "fetching.",
+    },
+  ];
 
-  componentDidMount() {
-    window.gapi.load("client", this.initClient);
-  }
-
-  initClient = () => {
-    window.gapi.client
-      .init({
-        apiKey: config.apiKey,
-        discoveryDocs: config.discoveryDocs,
-      })
-      .then(() => {
-        load(this.onLoad);
-      });
-  };
-
-  onLoad = (data, error) => {
-    if (data) {
-      const remi = JSON.parse(JSON.stringify(data.remi));
-      //console.log(remi);
-      this.setState({ remi });
-    } else {
-      console.log(error);
-      this.setState({ error });
-    }
-  };
-
-  render() {
-    const { remi, error } = this.state;
-    //console.log(remi);
-    if (error) {
-      return <div>{this.state.error}</div>;
-    }
-    return (
-      <DataTable
-        border={true}
-        background={{
-          header: "accent-1",
-          body: ["light", "light-3"],
-        }}
-        margin={"small"}
-        resizeable={true}
-        sortable={true}
-        columns={columns}
-        data={remi}
-        pin="header"
-      />
-    );
-  }
-}
+  return <ExcelData initialData={remi} columns={columns} load={load} />;
+};
 
 export default SurgicalList;

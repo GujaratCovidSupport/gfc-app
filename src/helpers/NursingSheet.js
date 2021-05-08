@@ -22,14 +22,16 @@ export function load(callback) {
               status: rem[5],
               remarks: rem[6],
               verified_on: moment(rem[8], "DD-MM-YYYY HH:mm:ss").fromNow(),
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Nursing Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Nursing Data."
+          );
         }
       );
   });

@@ -25,14 +25,16 @@ export function load(callback) {
               foodfor: rem[8],
               conditions: rem[9],
               verified_on: moment(rem[11], "DD-MM-YYYY HH:mm:ss").fromNow(),
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Food Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Food Data."
+          );
         }
       );
   });

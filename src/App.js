@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Grommet,
-  ResponsiveContext,
-  Tab,
-  Tabs,
-  Header,
-  Text,
-  Anchor,
-  Footer,
-  Nav,
-  Menu,
-} from "grommet";
+import { Anchor, Box, Footer, Grommet, Header, Menu, Nav, ResponsiveContext, Tab, Tabs, Text } from "grommet";
 import RemiList from "./components/RemiList";
 import MedicalList from "./components/MedicalList";
 import DoctorList from "./components/DoctorList";
@@ -39,13 +27,13 @@ const gfc_theme = {
   anchor: {
     color: {
       dark: "white",
-      light: "white",  
+      light: "white",
     },
     weight: "normal",
   },
 };
 
-function App() {
+const App = () => {
   return (
     <Grommet theme={gfc_theme} full>
       <ResponsiveContext.Consumer>
@@ -65,11 +53,23 @@ function App() {
                       </Anchor>
                     </Box>
                     <Nav direction="column" align="center">
-                    <Menu
+                      <Menu
                         label="Donate Plasma"
                         items={[
-                          { label: "English", onClick: () => { window.location.href='https://forms.gle/pdgsP6avND8W2xER8' } },
-                          { label: "ગુજરાતી", onClick: () => { window.location.href='https://forms.gle/hxcsJD3opaCks47e7' } },
+                          {
+                            label: "English",
+                            onClick: () => {
+                              window.location.href =
+                                "https://forms.gle/pdgsP6avND8W2xER8";
+                            },
+                          },
+                          {
+                            label: "ગુજરાતી",
+                            onClick: () => {
+                              window.location.href =
+                                "https://forms.gle/hxcsJD3opaCks47e7";
+                            },
+                          },
                         ]}
                       />
                       <Anchor
@@ -101,8 +101,20 @@ function App() {
                       <Menu
                         label="Donate Plasma"
                         items={[
-                          { label: "English", onClick: () => { window.location.href='https://forms.gle/pdgsP6avND8W2xER8' } },
-                          { label: "ગુજરાતી", onClick: () => { window.location.href='https://forms.gle/hxcsJD3opaCks47e7' } },
+                          {
+                            label: "English",
+                            onClick: () => {
+                              window.location.href =
+                                "https://forms.gle/pdgsP6avND8W2xER8";
+                            },
+                          },
+                          {
+                            label: "ગુજરાતી",
+                            onClick: () => {
+                              window.location.href =
+                                "https://forms.gle/hxcsJD3opaCks47e7";
+                            },
+                          },
                         ]}
                       />
                       <Anchor
@@ -214,6 +226,6 @@ function App() {
       </ResponsiveContext.Consumer>
     </Grommet>
   );
-}
+};
 
 export default App;

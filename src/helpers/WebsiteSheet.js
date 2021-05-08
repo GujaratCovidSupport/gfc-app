@@ -20,14 +20,16 @@ export function load(callback) {
               purpose: rem[3],
               details: rem[4],
               verified_on: moment(rem[6], "DD-MM-YYYY HH:mm:ss").fromNow(),
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Websites for COVID 19 Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Websites for COVID 19 Data."
+          );
         }
       );
   });

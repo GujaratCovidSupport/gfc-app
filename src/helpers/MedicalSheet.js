@@ -21,14 +21,16 @@ export function load(callback) {
               contact: rem[4],
               remarks: rem[5],
               verified_on: moment(rem[7], "DD-MM-YYYY HH:mm:ss").fromNow(),
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Medical Store Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Medical Store Data."
+          );
         }
       );
   });
