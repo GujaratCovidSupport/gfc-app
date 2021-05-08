@@ -8,24 +8,9 @@ import {
   Menu,
   Nav,
   ResponsiveContext,
-  Tab,
-  Tabs,
   Text,
 } from "grommet";
-import RemiList from "./components/RemiList";
-import MedicalList from "./components/MedicalList";
-import DoctorList from "./components/DoctorList";
-import EmergencyList from "./components/EmergencyList";
-import WebsiteList from "./components/WebsiteList";
-import OxygenList from "./components/OxygenList";
-import FoodList from "./components/FoodList";
-import PlasmaList from "./components/PlasmaList";
-import RTPCRList from "./components/RTPCRList";
-import AmbList from "./components/AmbuList";
-import CCCList from "./components/CCCList";
-import SurgicalList from "./components/SurgicalList";
-import NursingList from "./components/NursingList";
-//import TociliList from "./components/TociliList";
+import { Filter } from "./components/Filter";
 
 const gfc_theme = {
   global: {
@@ -146,78 +131,7 @@ const App = () => {
                 )
               }
             </ResponsiveContext.Consumer>
-            <Box direction="row" pad="medium">
-              <Tabs>
-                <Tab title="Remedesivir">
-                  <Box pad="medium">
-                    <RemiList />
-                  </Box>
-                </Tab>
-                <Tab title="Plasma Support">
-                  <Box pad="medium">
-                    <PlasmaList />
-                  </Box>
-                </Tab>
-                <Tab title="COVID19 Reports">
-                  <Box pad="medium">
-                    <RTPCRList />
-                  </Box>
-                </Tab>
-                <Tab title="Ambulance">
-                  <Box pad="medium">
-                    <AmbList />
-                  </Box>
-                </Tab>
-                <Tab title="Oxygen Sources">
-                  <Box pad="medium">
-                    <OxygenList />
-                  </Box>
-                </Tab>
-                <Tab title="Surgical Equipments">
-                  <Box pad="medium">
-                    <SurgicalList />
-                  </Box>
-                </Tab>
-                <Tab title="Covid Care Center">
-                  <Box pad="medium">
-                    <CCCList />
-                  </Box>
-                </Tab>
-                <Tab title="Doctor On Call">
-                  <Box pad="medium">
-                    <DoctorList />
-                  </Box>
-                </Tab>
-                <Tab title="Nursing Staff">
-                  <Box pad="medium">
-                    <NursingList />
-                  </Box>
-                </Tab>
-                <Tab title="Emergency Number">
-                  <Box pad="medium">
-                    <EmergencyList />
-                  </Box>
-                </Tab>
-                <Tab title="Medical Store">
-                  <Box pad="medium">
-                    <MedicalList />
-                  </Box>
-                </Tab>
-                <Tab title="Websites">
-                  <Box pad="medium">
-                    <WebsiteList />
-                  </Box>
-                </Tab>
-                <Tab title="Food For Patients">
-                  <Box pad="medium">
-                    <FoodList />
-                  </Box>
-                </Tab>
-                {/* <Tab title="Tocilizumab">
-                  <Box pad="medium"><TociliList /></Box>
-                </Tab>                 */}
-              </Tabs>
-            </Box>
+            <Filter />
             <Footer background="brand" pad="medium" direction="column">
               <Text>
                 Disclaimer: This is volunteer run effort. Portal shares list of

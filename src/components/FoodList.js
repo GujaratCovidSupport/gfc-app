@@ -1,7 +1,6 @@
 import React from "react";
-import { load } from "../helpers/FoodSheet";
 import { Text } from "grommet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
@@ -61,24 +60,10 @@ const columns = [
   },
 ];
 
-const FoodList = () => {
-  const remi = [
-    {
-      id: "fetching...",
-      city: "fetching...",
-      area: "fetching...",
-      org: "fetching...",
-      charges: "fetching...",
-      ld: "fetching...",
-      person: "fetching...",
-      contact: "fetching...",
-      foodfor: "fetching...",
-      conditions: "fetching...",
-      verified_on: "fetching.",
-    },
-  ];
+const FoodList = (props) => {
+  const { data } = props;
 
-  return <ExcelData initialData={remi} columns={columns} load={load} />;
+  return <ExcelData data={data} columns={columns} />;
 };
 
 export default FoodList;

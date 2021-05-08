@@ -1,7 +1,7 @@
 import React from "react";
 import { load } from "../helpers/OxygenSheet";
 import { Text } from "grommet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
@@ -56,23 +56,9 @@ const columns = [
   },
 ];
 
-const OxygenList = () => {
-  const remi = [
-    {
-      id: "fetching...",
-      city: "fetching...",
-      org: "fetching...",
-      name: "fetching...",
-      contact: "fetching...",
-      type: "fetching...",
-      timings: "fetching...",
-      status: "fetching...",
-      remarks: "fetching...",
-      verified_on: "fetching.",
-    },
-  ];
-
-  return <ExcelData initialData={remi} columns={columns} load={load} />;
+const OxygenList = (props) => {
+  const { data } = props;
+  return <ExcelData data={data} columns={columns} />;
 };
 
 export default OxygenList;

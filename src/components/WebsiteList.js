@@ -1,7 +1,6 @@
 import React from "react";
 import { Anchor, Text } from "grommet";
-import { load } from "../helpers/WebsiteSheet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
@@ -36,7 +35,8 @@ const columns = [
   },
 ];
 
-const WebsiteList = () => {
+const WebsiteList = (props) => {
+  const { data } = props;
   const remi = [
     {
       id: "fetching...",
@@ -48,7 +48,7 @@ const WebsiteList = () => {
     },
   ];
 
-  return <ExcelData initialData={remi} columns={columns} load={load} />;
+  return <ExcelData data={data} columns={columns} />;
 };
 
 export default WebsiteList;

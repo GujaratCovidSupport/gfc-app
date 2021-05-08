@@ -1,7 +1,6 @@
 import React from "react";
-import { load } from "../helpers/MedicalSheet";
 import { Text } from "grommet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
@@ -41,20 +40,10 @@ const columns = [
   },
 ];
 
-const MedicalList = () => {
-  const remi = [
-    {
-      id: "fetching...",
-      city: "fetching...",
-      area: "fetching...",
-      name: "fetching...",
-      contact: "fetching...",
-      remarks: "fetching...",
-      verified_on: "fetching.",
-    },
-  ];
+const MedicalList = (props) => {
+  const { data } = props;
 
-  return <ExcelData initialData={remi} columns={columns} load={load} />;
+  return <ExcelData data={data} columns={columns} />;
 };
 
 export default MedicalList;

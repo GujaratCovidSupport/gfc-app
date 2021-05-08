@@ -1,7 +1,6 @@
 import React from "react";
-import { load } from "../helpers/RemiSheet";
 import { Box, Text } from "grommet";
-import { ExcelData } from "./excelData";
+import { ExcelData } from "./ExcelData";
 
 const columns = [
   {
@@ -41,19 +40,8 @@ const columns = [
   },
 ];
 
-const RemiList = () => {
-  const remi = [
-    {
-      id: "fetching...",
-      city: "fetching...",
-      org: "fetching...",
-      contact: "fetching...",
-      status: "fetching...",
-      remarks: "fetching...",
-      verified_on: "fetching.",
-    },
-  ];
-
+const RemiList = (props) => {
+  const { data } = props;
   return (
     <Box>
       <Text>
@@ -63,7 +51,6 @@ const RemiList = () => {
       </Text>
       <br />
       <Text>
-        {" "}
         NOTE 2 - For Ahmedabad : Checklist for getting Remdesivir from SVP
         Hospital in Ahmedabad.
       </Text>
@@ -92,7 +79,7 @@ const RemiList = () => {
       <Text>If any documents are missing, application can be rejected.</Text>
       <Text>Successful application will get appointment for collecting.</Text>
       <br />
-      <ExcelData initialData={remi} columns={columns} load={load} />
+      <ExcelData data={data} columns={columns} />
     </Box>
   );
 };
