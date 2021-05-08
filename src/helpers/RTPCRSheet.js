@@ -27,14 +27,16 @@ export function load(callback) {
               rtpcr: rem[11],
               ctscan: rem[12],
               rapid: rem[13],
-            })) || [];            
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching RT-PCR Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching RT-PCR Data."
+          );
         }
       );
   });

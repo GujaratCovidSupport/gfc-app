@@ -1,7 +1,7 @@
 import React from "react";
-import config from "../config";
+import { Anchor, Text } from "grommet";
 import { load } from "../helpers/WebsiteSheet";
-import { DataTable, Anchor, Text } from "grommet";
+import { ExcelData } from "./excelData";
 
 const columns = [
   {
@@ -17,9 +17,7 @@ const columns = [
   {
     property: "website",
     header: <Text>Website</Text>,
-    render: datum => (
-      <Anchor href={datum.website} label="Tap Here" />
-    ),
+    render: (datum) => <Anchor href={datum.website} label="Tap Here" />,
   },
   {
     property: "purpose",
@@ -38,69 +36,19 @@ const columns = [
   },
 ];
 
-class WebsiteList extends React.Component {
-  state = {
-    remi: [
-      {
-        id: "fetching...",
-        city: "fetching...",
-        website: "fetching...",
-        purpose: "fetching...",
-        details: "fetching...",
-        verified_on: "fetching...",
-      },
-    ],
-    error: null,
-  };
+const WebsiteList = () => {
+  const remi = [
+    {
+      id: "fetching...",
+      city: "fetching...",
+      website: "fetching...",
+      purpose: "fetching...",
+      details: "fetching...",
+      verified_on: "fetching...",
+    },
+  ];
 
-  componentDidMount() {
-    window.gapi.load("client", this.initClient);
-  }
-
-  initClient = () => {
-    window.gapi.client
-      .init({
-        apiKey: config.apiKey,
-        discoveryDocs: config.discoveryDocs,
-      })
-      .then(() => {
-        load(this.onLoad);
-      });
-  };
-
-  onLoad = (data, error) => {
-    if (data) {
-      const remi = JSON.parse(JSON.stringify(data.remi));
-      //console.log(remi);
-      this.setState({ remi });
-    } else {
-      console.log(error);
-      this.setState({ error });
-    }
-  };
-
-  render() {
-    const { remi, error } = this.state;
-    //console.log(remi);
-    if (error) {
-      return <div>{this.state.error}</div>;
-    }
-    return (
-      <DataTable
-        border={true}
-        background={{
-          header: 'accent-1',
-          body: ['light', 'light-3'],
-        }}
-        margin={"small"}
-        resizeable={true}
-        sortable={true}
-        columns={columns}
-        data={remi}
-        pin="header"
-      />
-    );
-  }
-}
+  return <ExcelData initialData={remi} columns={columns} load={load} />;
+};
 
 export default WebsiteList;

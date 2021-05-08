@@ -18,15 +18,17 @@ export function load(callback) {
               contact: rem[2],
               timings: rem[3],
               status: rem[4],
-              verified_by: rem[5]
-            })) || [];            
+              verified_by: rem[5],
+            })) || [];
 
-          callback({
-            remi,
-          });
+          callback(remi);
         },
         (response) => {
-          callback(false, response.result.error, "Error in fetching Tocilizumab Data.");
+          callback(
+            false,
+            response.result.error,
+            "Error in fetching Tocilizumab Data."
+          );
         }
       );
   });
